@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maya Keller | Free Tennis Lessons for Kids</title>
+  <meta name="description" content="Maya Keller, a nationally ranked junior tennis player, has spent two years teaching tennis free of charge to Jewish kids and kids from disadvantaged backgrounds.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #0f3d2e;
+      --green-2: #16533f;
+      --ball: #d7f04a;
+      --cream: #f7f4ec;
+      --ink: #14211c;
+      --muted: #55645d;
+      --line: #e2ddd0;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      font-size: 17px;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.1; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .eyebrow {
+      font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--green-2);
+    }
+
+    /* ---------- Nav ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(15, 61, 46, .96); backdrop-filter: blur(6px);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-family: "Fraunces", Georgia, serif; font-weight: 800; font-size: 20px; color: #fff; text-decoration: none; }
+    .brand span { color: var(--ball); }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav ul a { color: #dfe9e4; text-decoration: none; font-size: 15px; font-weight: 500; }
+    nav ul a:hover { color: var(--ball); }
+
+    /* ---------- Hero ---------- */
+    .hero { background: var(--green); color: #fff; overflow: hidden; }
+    .hero .wrap {
+      display: grid; grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center;
+      padding-top: 72px; padding-bottom: 80px;
+    }
+    .hero .eyebrow { color: var(--ball); }
+    .hero h1 { font-size: clamp(38px, 5.2vw, 62px); margin: 16px 0 22px; font-weight: 800; }
+    .hero h1 em { font-style: normal; color: var(--ball); }
+    .hero p.lede { font-size: 19px; color: #d4e2dc; max-width: 34em; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .btn {
+      display: inline-block; padding: 14px 26px; border-radius: 999px;
+      font-weight: 600; text-decoration: none; font-size: 16px; transition: transform .15s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--ball); color: var(--green); }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,.45); color: #fff; }
+    .hero-photo { position: relative; }
+    .hero-photo img {
+      width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius);
+      box-shadow: 0 30px 60px rgba(0,0,0,.35);
+    }
+    .hero-photo::before {
+      content: ""; position: absolute; width: 120px; height: 120px; border-radius: 50%;
+      background: var(--ball); top: -30px; right: -30px; z-index: -0; opacity: .9;
+    }
+    .hero-photo img { position: relative; }
+
+    /* ---------- Stats ---------- */
+    .stats { background: #fff; border-bottom: 1px solid var(--line); }
+    .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat { padding: 34px 20px; text-align: center; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: none; }
+    .stat b { display: block; font-family: "Fraunces", Georgia, serif; font-size: 40px; color: var(--green); line-height: 1.1; }
+    .stat span { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: 96px 0; }
+    .section-head { max-width: 640px; margin-bottom: 48px; }
+    .section-head h2 { font-size: clamp(32px, 4vw, 46px); margin: 10px 0 16px; color: var(--green); }
+    .section-head p { color: var(--muted); font-size: 18px; }
+
+    /* Giving back */
+    .give { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: center; }
+    .give img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--radius); }
+    .give h2 { font-size: clamp(32px, 4vw, 46px); color: var(--green); margin: 10px 0 18px; }
+    .give p { margin-bottom: 16px; color: #2f3d37; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+    .card .dot { width: 34px; height: 34px; border-radius: 50%; background: var(--ball); margin-bottom: 12px; display: grid; place-items: center; font-weight: 700; color: var(--green); }
+    .card h3 { font-family: "Inter", sans-serif; font-size: 16px; margin-bottom: 6px; }
+    .card p { font-size: 14.5px; color: var(--muted); margin: 0; }
+
+    /* Achievements */
+    #achievements { background: #fff; }
+    .results { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .result {
+      display: flex; gap: 18px; align-items: flex-start;
+      padding: 24px; border-radius: 14px; background: var(--cream); border: 1px solid var(--line);
+    }
+    .result .tag {
+      flex: none; min-width: 64px; text-align: center; padding: 8px 10px; border-radius: 10px;
+      background: var(--green); color: var(--ball); font-family: "Fraunces", Georgia, serif; font-weight: 800; font-size: 20px;
+    }
+    .result h3 { font-family: "Inter", sans-serif; font-size: 17px; margin-bottom: 4px; }
+    .result p { font-size: 15px; color: var(--muted); }
+    .result.highlight { background: var(--green); border-color: var(--green); color: #fff; }
+    .result.highlight .tag { background: var(--ball); color: var(--green); }
+    .result.highlight p { color: #cfe0d8; }
+
+    /* Maccabiah */
+    .maccabiah { background: var(--green); color: #fff; }
+    .maccabiah .section-head h2 { color: #fff; }
+    .maccabiah .section-head p { color: #cfe0d8; }
+    .maccabiah .eyebrow { color: var(--ball); }
+    .mac-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+    .mac-grid figure { margin: 0; }
+    .mac-grid img { width: 100%; height: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius); }
+    figcaption { font-size: 14px; color: #b9cfc5; margin-top: 10px; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .gallery figure { margin: 0; }
+    .gallery img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 14px; }
+    .gallery figcaption { color: var(--muted); }
+
+    /* Contact */
+    .contact { background: var(--ball); }
+    .contact .wrap { text-align: center; padding-top: 88px; padding-bottom: 88px; }
+    .contact h2 { font-size: clamp(32px, 4.4vw, 50px); color: var(--green); max-width: 760px; margin: 12px auto 16px; }
+    .contact p { color: #2c3f17; max-width: 600px; margin: 0 auto; font-size: 18px; }
+    .contact .btn-primary { background: var(--green); color: #fff; margin-top: 28px; }
+    .contact small { display: block; margin-top: 18px; color: #3d5222; font-size: 14px; }
+
+    footer { background: var(--ink); color: #9fb0a8; font-size: 14px; }
+    footer .wrap { padding-top: 28px; padding-bottom: 28px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+    /* ---------- Mobile ---------- */
+    @media (max-width: 860px) {
+      nav ul { display: none; }
+      .hero .wrap, .give, .mac-grid { grid-template-columns: 1fr; }
+      .hero .wrap { padding-top: 48px; gap: 40px; }
+      .hero-photo { max-width: 420px; }
+      .stats .wrap { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .cards, .results { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      section.block { padding: 68px 0; }
+      .give img { max-width: 380px; }
+    }
+    @media (max-width: 520px) {
+      .gallery { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a href="#top" class="brand">Maya Keller<span>.</span></a>
+      <ul>
+        <li><a href="#giving-back">Giving Back</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#maccabiah">Maccabiah</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Free Lessons</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Free tennis lessons &middot; Two years and counting</p>
+        <h1>Sharing the game with kids who <em>deserve a chance</em> to play.</h1>
+        <p class="lede">
+          Maya Keller is a nationally ranked junior tennis player. For the past two years she has
+          volunteered her time and expertise teaching tennis, completely free, to Jewish kids and
+          to any kids from disadvantaged backgrounds who might not otherwise get the chance to play.
+        </p>
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">Request free lessons</a>
+          <a href="#achievements" class="btn btn-ghost">See Maya's results</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/maya-serving.jpg" alt="Maya Keller serving on an outdoor hard court">
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= STATS ================= -->
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b>#13</b><span>Midwest ranking in her age division</span></div>
+      <div class="stat"><b>#125</b><span>National ranking in her age division</span></div>
+      <div class="stat"><b>Silver</b><span>Doubles, Maccabiah Games, Tel Aviv 2026</span></div>
+      <div class="stat"><b>2 yrs</b><span>Teaching kids tennis for free</span></div>
+    </div>
+  </div>
+
+  <!-- ================= GIVING BACK ================= -->
+  <section class="block" id="giving-back">
+    <div class="wrap give">
+      <img src="images/maya-portrait.jpg" alt="Portrait of Maya Keller">
+      <div>
+        <p class="eyebrow">Giving back</p>
+        <h2>Free lessons from a nationally ranked player</h2>
+        <p>
+          Lessons, court time and equipment add up quickly, and too many kids never get their first
+          lesson. Maya has spent the last two years changing that. She shares the same skills she uses in
+          national competition with kids in the Jewish community and with any kids from disadvantaged
+          backgrounds who want to learn.
+        </p>
+        <p>
+          There is no cost to families, ever. Kids just need to show up ready to have fun and learn.
+        </p>
+        <!-- TIP: Add a sentence here about where and when lessons happen (city, park, or club),
+             or how many kids Maya has worked with, if you'd like to share that. -->
+        <div class="cards">
+          <div class="card">
+            <div class="dot">$0</div>
+            <h3>Always free</h3>
+            <p>Maya donates her time. Families never pay for lessons.</p>
+          </div>
+          <div class="card">
+            <div class="dot">&#10003;</div>
+            <h3>Open to every kid</h3>
+            <p>Jewish kids and any kids from disadvantaged backgrounds are welcome.</p>
+          </div>
+          <div class="card">
+            <div class="dot">&#9733;</div>
+            <h3>Coaching from a competitor</h3>
+            <p>Kids learn from a player who competes at national championships.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACHIEVEMENTS ================= -->
+  <section class="block" id="achievements">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">On the court</p>
+        <h2>The experience Maya brings to every lesson</h2>
+        <p>Maya competes against the top junior players in the Midwest and across the country.</p>
+      </div>
+      <div class="results">
+        <div class="result highlight">
+          <div class="tag">#13</div>
+          <div>
+            <h3>Ranked 13th in the Midwest</h3>
+            <p>One of the top players in the region for her age division.</p>
+          </div>
+        </div>
+        <div class="result highlight">
+          <div class="tag">#125</div>
+          <div>
+            <h3>Ranked 125th in the nation</h3>
+            <p>Nationally ranked in her age division.</p>
+          </div>
+        </div>
+        <div class="result">
+          <div class="tag">&#129352;</div>
+          <div>
+            <h3>Silver medal, doubles</h3>
+            <p>Maccabiah Games, Tel Aviv, July 2026</p>
+          </div>
+        </div>
+        <div class="result">
+          <div class="tag">USA</div>
+          <div>
+            <h3>National Hardcourt Winter Championships</h3>
+            <p>Competed against the country's top juniors.</p>
+          </div>
+        </div>
+        <div class="result">
+          <div class="tag">USA</div>
+          <div>
+            <h3>Summer National Championships</h3>
+            <p>Rome, Georgia</p>
+          </div>
+        </div>
+        <div class="result">
+          <div class="tag">&#127942;</div>
+          <div>
+            <h3>Many national tournaments</h3>
+            <p>A regular competitor on the national junior circuit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MACCABIAH ================= -->
+  <section class="block maccabiah" id="maccabiah">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Maccabiah Games &middot; Tel Aviv &middot; July 2026</p>
+        <h2>Representing Team USA in Israel</h2>
+        <p>
+          In July 2026 Maya represented the United States at the Maccabiah Games in Tel Aviv,
+          and came home with a silver medal in doubles.
+        </p>
+      </div>
+      <div class="mac-grid">
+        <figure>
+          <img src="images/maccabiah-opening.jpg" alt="Team USA marching in the Maccabiah Games opening ceremony">
+          <figcaption>Marching with Team USA at the opening ceremony.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/maccabiah-team-silver.jpg" alt="Team USA tennis players holding an American flag at the Maccabiah Games">
+          <figcaption>With the Team USA tennis squad in Tel Aviv.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="block" id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Gallery</p>
+        <h2>Trophies and milestones</h2>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="images/team-champions.jpg" alt="Maya holding the 2026 Girls Tennis Champions trophy">
+          <figcaption>Girls Tennis Champions, 2026</figcaption>
+        </figure>
+        <figure>
+          <img src="images/state-runner-up.jpg" alt="Maya holding a State Runner-Up trophy">
+          <figcaption>State Runner-Up</figcaption>
+        </figure>
+        <figure>
+          <img src="images/tournament-trophy.jpg" alt="Maya holding a gold tournament trophy on an indoor court">
+          <figcaption>Tournament trophy</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--green);">Free lessons</p>
+      <h2>Know a kid who would love to learn tennis?</h2>
+      <p>Lessons are always free. Reach out and we'll find a time for your child to get on the court with Maya.</p>
+      <!-- IMPORTANT: Replace YOUR-EMAIL@example.com below with a parent's email address. -->
+      <a class="btn btn-primary" href="mailto:YOUR-EMAIL@example.com?subject=Free%20tennis%20lessons%20with%20Maya">Email us about lessons</a>
+      <small>Lesson requests are handled by Maya's parents.</small>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Maya Keller</span>
+      <span>Free tennis for kids who deserve a chance to play.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
